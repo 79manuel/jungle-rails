@@ -26,6 +26,21 @@
       </div>
     </div>
 
+      <div class="col-sm-8">
+        <table class="table">
+          <% @product.reviews.each do |item| %>
+            <tr>
+            <td><%= item.product_id %></td>
+            <td><%= item.description %></td>
+            <td><%= item.rating %></td>
+            </tr>
+
+
+          <% end %>
+
+
+        </table>
+
   </article>
 
 </section>

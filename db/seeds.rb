@@ -19,8 +19,6 @@ unless Rails.env.development?
   exit 0
 end
 
-# Let's do this ...
-
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -132,5 +130,40 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## REVIEWS
+
+puts "Existing Reviews"
+
+Review.destroy_all
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: 'Completely useless!',
+  rating: 1
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 2,
+  description: 'Love it!',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 2,
+  description: 'It looks great!',
+  rating: 5
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: 'Not good',
+  rating: 2
+})
+
 
 puts "DONE!"
+
