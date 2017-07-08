@@ -26,21 +26,48 @@
       </div>
     </div>
 
+    <div class="row">
       <div class="col-sm-8">
-        <table class="table">
-          <% @product.reviews.each do |item| %>
-            <tr>
-            <td><%= item.product_id %></td>
-            <td><%= item.description %></td>
-            <td><%= item.rating %></td>
-            </tr>
 
 
-          <% end %>
+      </div>
+    </div>
 
 
-        </table>
+    <div class="col-sm-8">
+    <h3>REVIEWS</h3>
 
+      <table class="table">
+      <tr><th>Description</th><th>Rating</th></tr>
+        <% @product.reviews.each do |item| %>
+          <tr>
+          <td><%= item.description %></td>
+          <td><%= item.rating %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="col-sm-4">
+      <dl class="dl-horizontal">
+      <dd><h3>New Review</h3></dd>
+      <%= form_for @review, url: product_reviews_url(@product) do |f| %>
+      <dt><%= f.label :description %></dt>
+      <dd><%= f.text_area :description %></dd>
+
+      <dt><%= f.label :rating %></dt>
+      <dd><%= f.radio_button(:rating, "5") %> <%= f.label(:rating.to_s + "_5", "Rocks") %></dd>
+      <dd><%= f.radio_button(:rating, "4") %> <%= f.label(:rating.to_s + "_4", "Pretty good") %></dd>
+      <dd><%= f.radio_button(:rating, "3") %> <%= f.label(:rating.to_s + "_3", "Meh") %></dd>
+      <dd><%= f.radio_button(:rating, "2") %> <%= f.label(:rating.to_s + "_2", "Kinda bad") %></dd>
+      <dd><%= f.radio_button(:rating, "1") %> <%= f.label(:rating.to_s + "_1", "Sucks big time") %></dd>
+
+      <%=f.hidden_field :product_id, :value=>@product.id %>
+      <dd><%= f.submit %></dd>
+      <% end %>
+
+
+    </div>
   </article>
 
 </section>
