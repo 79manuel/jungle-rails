@@ -16,3 +16,42 @@ body {
   padding-top: 15px;
   padding-left: 566px;
 }
+
+
+// sessions/new.html.erb
+
+
+.login{
+  margin-top:50px;
+  text-align: center;
+}
+
+.login h1{
+  padding:5px;
+  background-color:lightgrey;
+  border-radius: 5px;
+
+}
+
+.fields{
+  margin-top: 20px;
+}
+
+.form-control{
+  width:80%;
+  margin: auto;
+  margin-bottom:10px;
+}
+
+// users/new.html.erb
+
+.signup{
+  margin-top:50px;
+  text-align: center;
+}
+
+  h1{
+    padding:5px;
+    background-color:lightgrey;
+    border-radius: 5px;
+  }

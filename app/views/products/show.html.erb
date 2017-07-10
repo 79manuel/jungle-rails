@@ -41,11 +41,13 @@
       <tr><th>Description</th><th>Rating</th></tr>
         <% @product.reviews.each do |item| %>
           <tr>
-          <td><%= item.description %></td>
+          <td><%= item.description  %></td>
           <td><%= item.rating %></td>
           </tr>
         <% end %>
       </table>
+
+      <button type="button" class="btn  btn-default btn-sm" method: :delete><%= link_to "Delete review", "/" %></button>
     </div>
 
     <div class="col-sm-4">
@@ -65,9 +67,7 @@
       <%=f.hidden_field :product_id, :value=>@product.id %>
       <dd><%= f.submit %></dd>
       <% end %>
-
-
+      </dl>
     </div>
   </article>
-
 </section>
