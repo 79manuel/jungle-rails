@@ -10,11 +10,11 @@ class ReviewsController < ApplicationController
   def create
     review = Review.new(review_params)
     review.user_id = current_user.id
-
+    id = review.product_id
     if review.save!
-      redirect_to '/', notice: "Review created!"
+      redirect_to product_path(id), notice: "Review created!"
     else
-      redirect_to '/products/product_id', notice: "Try Again"
+      redirect_to product_path(id), notice: "Try Again"
     end
   end
 
@@ -23,9 +23,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    review = Review.find params[:id]
-    review.destroy
-    redirect_to '/products/product_id', notice: 'Review deleted!'
+    @review = Review.find params[:id]
+    id = @review.product_id
+    @review.destroy
+    redirect_to product_path(id), notice: 'Review deleted!'
   end
 
 

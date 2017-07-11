@@ -25,29 +25,39 @@
         </dl>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-sm-8">
-
-
-      </div>
-    </div>
-
+    <br>
 
     <div class="col-sm-8">
-    <h3>REVIEWS</h3>
+      <% if flash[:notice]=="Review created!" %>
+        <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Review was Created </div>
+      <% end %>
+      <% if flash[:notice]=="Review deleted!" %>
+        <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Review was Deleted </div>
+      <% end %>
+      <% if flash[:notice]=="Try Again" %>
+        <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Try Again! </div>
+      <% end %>
+      <h3>REVIEWS</h3>
 
       <table class="table">
-      <tr><th>Description</th><th>Rating</th></tr>
+        <tr>
+          <th>Description</th>
+          <th>Rating</th>
+        </tr>
         <% @product.reviews.each do |item| %>
           <tr>
-          <td><%= item.description  %></td>
-          <td><%= item.rating %></td>
+            <td><%= item.description  %></td>
+            <td><%= item.rating %></td>
+            <td>
+            <%= link_to 'Delete Review', product_review_url(product_id: @product.id, id: item.id), class: 'btn btn-info', :method => :delete %>
+            </td>
           </tr>
+
         <% end %>
       </table>
-
-      <button type="button" class="btn  btn-default btn-sm" method: :delete><%= link_to "Delete review", "/" %></button>
     </div>
 
     <div class="col-sm-4">

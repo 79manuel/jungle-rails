@@ -1,0 +1,13 @@
+
+<tr>
+  <td>
+    <h3><%= category.name %></h3>
+
+  </td>
+  <td>
+    <div>
+
+    <%= link_to 'Delete Category', admin_category_url(:id => category.id), class: 'btn btn-info', :method => :delete %>
+  </div>
+  </td>
+</tr>
