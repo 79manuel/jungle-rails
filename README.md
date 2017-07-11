@@ -2,7 +2,8 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
-
+## Final Product
+!["Screenshot of Categories Screen"](https://github.com/79manuel/tweetr/blob/master/docs/Home%20page%20no%20compose.png?raw=true)
 ## Setup
 
 1. Fork & Clone
