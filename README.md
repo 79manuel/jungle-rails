@@ -3,11 +3,11 @@
 A mini e-commerce application built with Rails 4.2 where user can make purchases and create reviews when logged in. Users with Admin access can create and delete both products and categories.
 
 ## Final Product
-!["Screenshot of Categories Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/categories_screen.png)
-!["Screenshot of My Cart Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/My_cart.png)
-!["Screenshot of After Purchase Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/after_purchase.png)
-!["Screenshot of Create Category Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/create_category.png)
-!["Screenshot of Delete Review Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/review_deleted.png)
+!["Screenshot of Categories Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/categories_screen.png?raw=true)
+!["Screenshot of My Cart Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/My_cart.png?raw=true)
+!["Screenshot of After Purchase Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/after_purchase.png?raw=true)
+!["Screenshot of Create Category Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/create_category.png?raw=true)
+!["Screenshot of Delete Review Screen"](https://github.com/79manuel/jungle-rails/blob/master/docs/review_deleted.png?raw=true)
 
 ## Setup
 
